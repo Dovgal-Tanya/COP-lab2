@@ -7,13 +7,22 @@ interface KpiCardProps {
     isPositive?: boolean;
 }
 
-export const KpiCard: React.FC<KpiCardProps> = ({ title, value, trend, isPositive = true }) => {
+export const KpiCard: React.FC<KpiCardProps> = ({
+                                                    title,
+                                                    value,
+                                                    trend,
+                                                    isPositive = true,
+                                                }) => {
     return (
         <div style={cardStyle}>
-            <h4 style={{ margin: '0 0 8px 0', color: '#a78bfa', fontSize: '14px', fontWeight: 500 }}>{title}</h4>
-            <div style={{ fontSize: '28px', fontWeight: '700', marginBottom: '8px', color: '#f3e8ff' }}>{value}</div>
+            <h4 style={{ margin: '0 0 8px 0', color: '#a78bfa', fontSize: '14px', fontWeight: 500 }}>
+                {title}
+            </h4>
+            <div style={{ fontSize: '28px', fontWeight: '700', marginBottom: '8px', color: '#f3e8ff' }}>
+                {value}
+            </div>
             <span style={{ color: isPositive ? '#f472b6' : '#f87171', fontSize: '12px', fontWeight: 600 }}>
-        {trend} порівняно з минулим місяцем
+        {trend}
       </span>
         </div>
     );
@@ -27,5 +36,5 @@ const cardStyle: React.CSSProperties = {
     padding: '20px',
     flex: '1',
     minWidth: '220px',
-    boxShadow: '0 8px 32px rgba(15, 10, 26, 0.3)'
+    boxShadow: '0 8px 32px rgba(15, 10, 26, 0.3)',
 };
